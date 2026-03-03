@@ -26,6 +26,16 @@ We recommend EDDSA as the key type, but RSA (the default) is fine too.
 You can find your GPG id with `gpg --list-keys your@email.com`. The
 ID looks something like `79DFFEFC5EC506356B7BCF00E5FEBCA4A034DD65`.
 
+## Import missing keys
+
+After cloning a vault, you won't yet have all recipient public keys in your keychain.
+This means you can read entries, but not modify them or add new ones.
+
+A copy of each recipient's public key is stored in `.public-keys`, and you can import them with:
+
+```
+cd .public-keys && gpg --import *
+```
 
 ## Add/edit a new password
 
